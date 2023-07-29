@@ -1,0 +1,275 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+  outline: 0;
+  border: 0;
+}
+
+:root {
+  --main-font: "Chakra Petch", sans-serif;
+  --font-color: white;
+  --background-color: black;
+  --amination-font-familty: "Geo", sans-serif;
+}
+
+/* header section */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+  height: 12vh;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+}
+
+.header-logo-container {
+  width: 110px;
+  height: 80px;
+}
+
+.header-logo {
+  width: 100%;
+  height: 100%;
+  margin-left: 30px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 20px;
+}
+
+.links li {
+  margin: 0 40px 0 40px;
+  position: relative;
+}
+
+.links li a:after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(
+    to right,
+    rgba(38, 0, 255, 0.566),
+    rgba(115, 0, 255, 0.616)
+  );
+  width: 0;
+  height: 3px;
+  border-radius: 5px;
+  bottom: -10.5px;
+  left: 1px;
+  transition: all 0.26s ease;
+}
+
+.links li a {
+  color: var(--font-color);
+  font-family: var(--main-font);
+  font-size: 1.18rem;
+}
+
+.links li a:hover:after {
+  width: 100%;
+}
+
+.links li a:hover {
+  background: linear-gradient(
+    to right,
+    rgba(38, 0, 255, 0.836),
+    rgba(115, 0, 255, 0.872)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* home section */
+
+.home-secion {
+  background: linear-gradient(rgba(111, 0, 255, 0.16), rgba(0, 30, 255, 0.123)),
+    url(/images/Home-background-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-secion::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(rgb(255, 255, 255, 0.1), rgb(255, 255, 255, 0));
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* home text section  */
+
+.home-text-section {
+  color: var(--font-color);
+  font-size: 1.5rem;
+  width: 100%;
+  padding: 0 40px 0 40px;
+}
+
+.home-text-section h1 {
+  font-family: "New Rocker", cursive;
+  position: relative;
+  font-size: 5.3rem;
+  width: 340px;
+}
+
+.home-text-section h1::before {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(38, 0, 255, 0.831),
+    rgba(115, 0, 255, 0.941)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  overflow: hidden;
+  content: attr(data-text);
+  -webkit-text-stroke: 0.1vw rgba(255, 42, 0, 0.55);
+  animation: animate 6s linear infinite;
+}
+
+.home-text-btn {
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  color: var(--font-color);
+  font-family: var(--main-font);
+  background: linear-gradient(
+    to right,
+    rgba(38, 0, 255, 0.566),
+    rgba(115, 0, 255, 0.616)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 190px;
+  margin-top: 40px;
+  font-size: 1.05rem;
+  transition: scale 0.5s ease-in-out, width 0.27s ease-in-out;
+}
+
+.home-text-btn img {
+  width: 40px;
+  height: 18px;
+  display: none;
+}
+
+.home-text-btn:hover {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  padding-left: 30px;
+  padding-right: 20px;
+  transform: scale(1.15);
+}
+.home-text-btn:hover img {
+  display: inline-block;
+}
+
+/* .home-text-btn h3 {
+  display: inline;
+}
+
+
+
+
+
+
+
+/* animation */
+
+@keyframes animate {
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+
+  70%,
+  90% {
+    width: 100%;
+  }
+}
+
+.home-text-section p {
+  padding: 10px 0 10px 0;
+  font-family: var(--main-font);
+}
+
+.text-animation {
+  font-family: "Shojumaru", cursive;
+  position: relative;
+}
+
+.text-animation::before {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(38, 0, 255, 0.831),
+    rgba(115, 0, 255, 0.941)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  overflow: hidden;
+  content: attr(data-text);
+  -webkit-text-stroke: 0.12vw rgba(255, 42, 0, 0.523);
+  animation: animate 6s linear infinite;
+}
+
+/* home logo section */
+
+.home-section-logo-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-section-logo {
+  width: 650px;
+  height: 100px;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  cursor: pointer;
+}
+
+.home-secion .box:hover {
+  background-color: blue;
+}
